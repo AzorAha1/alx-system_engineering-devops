@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod o+x home
+chmod u+x home
