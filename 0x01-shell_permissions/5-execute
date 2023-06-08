@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod u+x home
+chmod 100 home
