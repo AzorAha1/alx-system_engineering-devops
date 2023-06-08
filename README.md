@@ -1,3 +1,1 @@
-#!/bin/bash
-# alx-system_engineering-devops
-shell basics 
+initial README
