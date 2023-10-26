@@ -1,0 +1,1 @@
+read me file for loops conditions and parsing in devops 
