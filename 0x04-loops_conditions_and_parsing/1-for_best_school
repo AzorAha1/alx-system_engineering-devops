@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#this is a bash script that uses for loop to print best school 10 times
+for _ in {0..9}; do
+    echo "Best School"
+done
