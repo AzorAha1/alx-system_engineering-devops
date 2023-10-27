@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#print content of current directory
+for i in *; do
+    echo "$i"
+done
