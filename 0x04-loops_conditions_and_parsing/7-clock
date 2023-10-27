@@ -2,10 +2,10 @@
 #clock
 #initialize hour to 0 and mins to 1
 Hour=0
-Mins=1
 #check while the our is less than 12 thats how long the outer loop will run 
 while [ $Hour -lt 12 ]; do
     echo "Hour: $Hour"
+    Mins=1
     #in the inner loop we check will mins is less than 60 we run and incrementing it printing it also
     while [ $Mins -lt 60 ]; do
         echo "$Mins"
@@ -13,6 +13,5 @@ while [ $Hour -lt 12 ]; do
     done
     #when mins is reaches 60 it leaves the inner loop and increments hour while reinitialiazing Minites to 1 and print it
     ((Hour++))
-    Mins=1
 #the loops keeps going until it 12
 done
