@@ -2,8 +2,7 @@
 #checks if file exists
 school="/home/vboxuser/Documents/alx-system_engineering-devops/0x04-loops_conditions_and_parsing/school"
 if [ -f "$school" ]; then
-    echo "school exists"
-    
+    echo "school file exists"
     if [ -s "$school" ]; then
         echo "school file is not empty"
     fi
