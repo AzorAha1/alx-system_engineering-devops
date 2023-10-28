@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#kill infinite loop printing infinity and beyond
+pkill -f "7-highlander"
