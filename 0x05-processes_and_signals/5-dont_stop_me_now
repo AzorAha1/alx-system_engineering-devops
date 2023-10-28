@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #kill infinite loop printing infinity and beyond
 pidname=$(pgrep -f "4-to_infinity_and_beyond")
-kill $pidname
+kill "$pidname"
