@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#ping
+argument=$1
+count=0
+if [ -z "$argument" ]; then
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+    else
+        while [ $count -lt 5 ]; do
+            ping "$argument"
+            ((count++))
+        done
+fi
