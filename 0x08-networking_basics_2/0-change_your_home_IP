@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #change your home ip
 newlocalhostip="127.0.0.2"
-facebookdomain="facebook.com"
 newfacebookip="8.8.8.8"
 hostfile="/etc/hosts"
 sudo sed -i "s/127.0.0.1/$newlocalhostip/g" $hostfile
