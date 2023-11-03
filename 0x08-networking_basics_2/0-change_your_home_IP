@@ -5,4 +5,4 @@ facebookdomain="facebook.com"
 newfacebookip="8.8.8.8"
 hostfile="/etc/hosts"
 sudo sed -i "s/127.0.0.1/$newlocalhostip/g" $hostfile
-printf "%s\t%s\n" "$newfacebookip" "$facebookdomain" | sudo tee -a "$hostfile"
+sudo sed -i "s/157.240.11.35/$newfacebookip/g" $hostfile
