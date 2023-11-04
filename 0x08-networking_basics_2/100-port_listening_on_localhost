@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-#to-do
+#listens to port 98 on localhost
+sudo nc -l -p 98 -v
