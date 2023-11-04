@@ -3,5 +3,8 @@
 newlocalhostip="127.0.0.2"
 newfacebookip="8.8.8.8"
 hostfile="/etc/hosts"
-sudo sed -i "s/127.0.0.1/$newlocalhostip/g" $hostfile
-sudo sed -i "s/157.240.11.35/$newfacebookip/g" $hostfile
+backup="$HOME/hosts.new"
+sudo cp $hostfile "$backup"
+sudo sed -i "s/127.0.0.1/$newlocalhostip/g" "$backup"
+echo "$newfacebookip   facebook.com" | sudo tee -a "$backup"
+sudo cp -f "$backup" $hostfile
