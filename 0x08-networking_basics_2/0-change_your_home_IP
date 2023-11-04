@@ -7,4 +7,4 @@ backup="$HOME/hosts.new"
 sudo cp $hostfile "$backup"
 sudo sed -i "s/127.0.0.1/$newlocalhostip/g" "$backup"
 echo "$newfacebookip   facebook.com" | sudo tee -a "$backup"
-sudo cp -f "$backup" $hostfile
+sudo cp -f "$backup" "$hostfile"
