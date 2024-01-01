@@ -1,6 +1,6 @@
 #!/bin/env bash
 # connect to a server without a password
-Host 70.72.42.1
+Host 54.197.131.36
     User ubuntu
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
