@@ -1,4 +1,3 @@
 #!/bin/env bash
 #connect to a server without a password
 echo -e "Host *\n   IdentityFile ~/.ssh/school\n    PasswordAuthentication no" >> ~/.ssh/config
-
