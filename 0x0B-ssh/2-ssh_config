@@ -1,4 +1,6 @@
 #!/bin/env bash
-#connect to a server without a password
-cat ~/.ssh/school.pub >> ~/.ssh/authorized_keys
-echo -e "Host *\n   IdentityFile ~/.ssh/school\n    PasswordAuthentication no" >> ~/.ssh/config
+# connect to a server without a password
+Host 70.72.42.1
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
