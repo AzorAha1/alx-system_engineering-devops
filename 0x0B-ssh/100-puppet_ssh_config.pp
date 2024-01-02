@@ -7,5 +7,8 @@ file { '/home/vboxuser/.ssh/config':
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
   EOF
+  owner   => 'root',
+  group   => 'root',
+  mode    =>  '0600'
 }
 
