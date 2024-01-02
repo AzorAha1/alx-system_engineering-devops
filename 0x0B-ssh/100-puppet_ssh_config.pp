@@ -7,7 +7,7 @@ Host 54.197.131.36
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
   EOF
-  owner   => 'root',
-  group   => 'root',
+  owner   => 'vboxuser',
+  group   => 'vboxuser',
   mode    => '0600'
 }
