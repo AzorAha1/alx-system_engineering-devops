@@ -2,9 +2,9 @@
 include stdlib
 file_line {'turn off password auth':
   line => 'PasswordAuthentication no',
-  path => '/home/vboxuser/.ssh/config',
+  path => '/etc/ssh/ssh_config',
 }
 file_line{'Declare identity file':
-  line => 'IdentityFile',
-  path => '/home/vboxuser/.ssh/config',
+  line => 'IdentityFile ~/.ssh/school',
+  path => '/etc/ssh/ssh_config',
 }
