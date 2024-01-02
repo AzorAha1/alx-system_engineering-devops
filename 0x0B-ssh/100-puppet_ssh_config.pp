@@ -2,13 +2,12 @@
 file { '/home/vboxuser/.ssh/config':
   ensure  => present,
   content => @("EOF"),
-  Host 54.197.131.36
+Host 54.197.131.36
     user ubuntu
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
   EOF
   owner   => 'root',
   group   => 'root',
-  mode    =>  '0600'
+  mode    => '0600'
 }
-
