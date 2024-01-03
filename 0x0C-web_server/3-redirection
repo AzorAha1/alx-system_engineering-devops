@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# redirection with 301 status code
+sudo sed -i "/server {/a \
+    location \/redirect_me{ \
+        return 301 http:\/\/:54.197.131.36;\
+    }" /etc/nginx/sites-enabled/default
