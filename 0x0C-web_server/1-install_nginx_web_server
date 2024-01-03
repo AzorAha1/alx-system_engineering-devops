@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #installation of nginx on remote server
 sudo apt update
-sudo apt install -y nginx
+sudo apt -y install nginx
 sudo sh -c 'echo "Hello World!" | tee /var/www/html/index.html'
 sudo sh -c "echo 'server {
     listen 80;
@@ -11,5 +11,8 @@ sudo sh -c "echo 'server {
         index index.html;
     }
 
-}' >> /etc/nginx/sites-enabled/default" > /dev/null
+}' >> /etc/nginx/sites-enabled/default"
 sudo service nginx restart
+
+
+
