@@ -12,7 +12,7 @@ sudo sh -c "echo 'server {
         index index.html;
     }
     location /redirect_me {
-        return 301 54.197.131.36
+        return 301;
     }
 
 }' >> /etc/nginx/sites-enabled/default"
