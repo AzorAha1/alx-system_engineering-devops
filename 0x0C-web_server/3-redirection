@@ -5,4 +5,4 @@ nginxserver="server{
         return 301 http://54.197.131.36;
     }
 }"
-ssh ubuntu@54.197.131.36 "echo '$nginxserver' | sudo tee /etc/nginx/sites-en > /dev/null"
+echo $nginxserver | sudo tee /etc/nginx/sites-en > /dev/null
