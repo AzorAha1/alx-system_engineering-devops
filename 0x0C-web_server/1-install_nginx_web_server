@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #installation of nginx on remote server
-sudo apt-get -y install nginx
+ssh ubuntu@54.197.131.36 "sudo apt -y install nginx"
 echo "Hello World!" > /var/www/html/index.html
-sudo service restart nginx
+ssh ubuntu@54.197.131.36 "sudo service restart nginx"
