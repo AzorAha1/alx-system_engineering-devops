@@ -2,4 +2,4 @@
 #installation of nginx on remote server
 ssh ubuntu@54.197.131.36 "sudo apt -y install nginx"
 echo "Hello World!" > /var/www/html/index.html
-ssh ubuntu@54.197.131.36 "sudo service restart nginx"
+ssh ubuntu@54.197.131.36 "sudo /etc/init.d/nginx restart"
