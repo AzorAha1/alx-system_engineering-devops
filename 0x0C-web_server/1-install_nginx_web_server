@@ -3,8 +3,8 @@
 sudo apt update
 sudo apt install -y nginx
 sudo sh -c 'echo "Hello World!" | tee /var/www/html/index.html'
-sh -c "echo 'server {
+sudo sh -c "echo 'server {
     listen 80;
 
-}' | sudo tee /etc/nginx/sites-enabled/default" > /dev/null
+}' >> /etc/nginx/sites-enabled/default" > /dev/null
 sudo service nginx restart
