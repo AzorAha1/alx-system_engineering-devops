@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 # redirection with 301 status code
-echo ""
+echo "server{
+    location /redirect_me{
+        return 301 http://54.197.131.36;
+    }
+}" | sudo tee /etc/nginx/sites-enabled/default > /dev/null
