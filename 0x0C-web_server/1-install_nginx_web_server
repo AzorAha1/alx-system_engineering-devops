@@ -13,3 +13,4 @@ sudo sh -c "echo 'server {
 
 }' >> /etc/nginx/sites-enabled/default"
 sudo service nginx restart
+
