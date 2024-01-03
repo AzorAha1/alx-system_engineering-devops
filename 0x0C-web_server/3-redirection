@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 #redirection with 301 status code
-nginxserver="server{
-    location /redirect_me{
-        return 301 http://54.197.131.36;
+# nginxserver="server{
+#     location /redirect_me{
+#         return 301 http://54.197.131.36;
+#     }
+# }"
+# ssh ubuntu@54.197.131.36 "echo '$nginxserver' | sudo tee /etc/nginx/sites-enabled/default"
+sudo sh -c "echo 'server {
+    location /redirect_me {
+        301 54.197.131.36
     }
-}"
-ssh ubuntu@54.197.131.36 "echo '$nginxserver' | sudo tee /etc/nginx/sites-enabled/default"
+
+}' >> /etc/nginx/sites-enabled/default"
