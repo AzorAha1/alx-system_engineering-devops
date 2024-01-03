@@ -5,6 +5,10 @@ sudo apt install -y nginx
 sudo sh -c 'echo "Hello World!" | tee /var/www/html/index.html'
 sudo sh -c "echo 'server {
     listen 80;
+    location / {
+        root /var/www/html;
+        index index.html;
+    }
 
 }' >> /etc/nginx/sites-enabled/default" > /dev/null
 sudo service nginx restart
