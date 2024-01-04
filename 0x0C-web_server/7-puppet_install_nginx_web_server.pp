@@ -6,10 +6,9 @@ exec { 'apt-update':
 package { 'nginx':
   ensure => installed,
 }
-file_line {'nginx config':
-  ensure => present
-  line   => 'echo "Hello World" | tee /var/www/html/index.html',
-  path   => '/etc/nginx/sites-enabled/default',
+file { '/var/www/html/index.html':
+  ensure  => present,
+  content => 'Hello World!'
 }
 file { '/etc/nginx/sites-enabled/default':
   ensure  => present,
@@ -18,12 +17,15 @@ file { '/etc/nginx/sites-enabled/default':
     server_name localhost;
     location / {
       root /var/www/html;
-      index index.html;
     }
     location /redirect_me{
       return 301 http://54.197.131.36;
     }
-  }
-  ",
+  }",
+}
+service { 'nginx':
+  ensure     => running,
+  enable     => true,
+  hasrestart => true,
 }
 
