@@ -17,6 +17,7 @@ file { '/etc/nginx/sites-enabled/default':
     server_name localhost;
     location / {
       root /var/www/html;
+      index index.html;
     }
     location /redirect_me{
       return 301 http://54.197.131.36;
@@ -28,4 +29,3 @@ service { 'nginx':
   enable     => true,
   hasrestart => true,
 }
-
