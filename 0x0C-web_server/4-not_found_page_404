@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-#redirection with 301 status code
+#redirection with 404 status code
 
 sudo apt update
 sudo apt -y install nginx
-echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html > /dev/null
 sudo sh -c "echo 'server {
     listen 80;
     server_name 54.197.131.36;
@@ -14,6 +14,7 @@ sudo sh -c "echo 'server {
     location /redirect_me {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
+    return 404 /404.html;
 
 }' > /etc/nginx/sites-enabled/default"
 sudo service nginx restart
