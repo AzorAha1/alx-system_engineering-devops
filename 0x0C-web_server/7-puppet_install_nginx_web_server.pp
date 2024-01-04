@@ -7,8 +7,9 @@ package { 'nginx':
   ensure => installed,
 }
 file_line {'nginx config':
-  line => 'echo "Hello World" | tee /var/www/html/index.html',
-  path => '/etc/nginx/sites-enabled/default',
+  ensure => present
+  line   => 'echo "Hello World" | tee /var/www/html/index.html',
+  path   => '/etc/nginx/sites-enabled/default',
 }
 file { '/etc/nginx/sites-enabled/default':
   ensure  => present,
