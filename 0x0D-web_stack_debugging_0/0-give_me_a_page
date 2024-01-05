@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 #get apache to run on container and returning a page when quering to the root
-sudo docker run -d -ti -p 8080:80 --name my-apache-server -e MY_VARIABLE="Hello Holberton" httpd
+
+sudo docker run -d -ti -p 8080:80 --name my-apache-server httpd
+sudo docker exec -ti my-apache-server /bin/bash -c 'echo "Hello Holberton" > /usr/local/apache2/htdocs/index.html'
