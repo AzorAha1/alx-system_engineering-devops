@@ -1,1 +1,10 @@
 #!/usr/bin/env bash
+#install and configure a load balancer(HAproxy) on server
+studentid=415786
+sudo apt update
+sudo apt install -y haproxy
+sudo sh -c "echo 'backend web-backend 
+    balance roundrobin check
+    server web-01 $studentid-web-01
+    server web-02 $studentid-web-02
+    '" >> /etc/haproxy/haproxy.cfg
