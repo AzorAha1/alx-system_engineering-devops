@@ -9,7 +9,7 @@ echo -e "frontend serverfront *:80\n\
 
 echo -e "backend serverback\n\
     balance roundrobin\n\
-    server $studentid-web-01 54.197.131.36 check\n\
-    server $studentid-web-02 100.26.226.35 check\n\
+    server ${studentid}-web-01 54.197.131.36 check\n\
+    server ${studentid}-web-02 100.26.226.35 check\n\
     " | sudo tee -a /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
