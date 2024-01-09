@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#installation of nginx on remote server
+#installation of nginx on remote serve
 
 HOSTNAME=$(hostname)
 sudo apt update
