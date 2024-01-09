@@ -20,7 +20,7 @@ file { '/etc/nginx/sites-enabled/default':
       index index.html;
     }
     location /redirect_me{
-      return 301 http://54.197.131.36;
+	return 301 http://54.197.131.36;
     }
   }",
 }
