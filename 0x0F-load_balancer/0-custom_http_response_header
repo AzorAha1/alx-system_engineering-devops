@@ -6,10 +6,11 @@ sudo apt -y install nginx
 echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
 sudo sh -c "echo 'server {
     listen 80;
-    add_header custom_header \"X-Served-By: $HOSTNAME\";
+    
     location / {
         root /var/www/html;
         index index.html;
+        add_header X-Served-By: $HOSTNAME;
     }
     location /redirect_me {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
