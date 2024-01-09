@@ -4,12 +4,12 @@
 HOST=$(hostname)
 sudo apt update
 sudo apt -y install nginx
-sudo sh -c "echo 'server {
+sudo sh -c "echo \"server {
     listen 80 default_server;
     location / {
         root /var/www/html;
         index index.html;
         add_header X-Served-By $HOST;
     }
-}' > /etc/nginx/sites-available/default"
+}\" > /etc/nginx/sites-available/default"
 sudo service nginx restart
