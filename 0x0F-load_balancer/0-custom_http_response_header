@@ -11,5 +11,5 @@ sudo sh -c "echo 'server {
         index index.html;
         add_header X-Served-By $HOST;
     }
-}' > /etc/nginx/sites-available/default"
+}' >> /etc/nginx/sites-available/default"
 sudo service nginx restart
