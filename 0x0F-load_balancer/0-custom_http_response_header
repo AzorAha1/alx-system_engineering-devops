@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #installation of nginx on remote server
 
 HOSTNAME=$(hostname)
