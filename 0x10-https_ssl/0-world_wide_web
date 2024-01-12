@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#configure domain zone to have different sub domains
+domain="$1"
+subdomain="$2"
+echo The subdomain $subdomain is an A record and points to $domain
