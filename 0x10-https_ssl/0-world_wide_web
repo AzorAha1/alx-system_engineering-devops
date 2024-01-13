@@ -12,7 +12,7 @@ else
 fi
 
 for sub in "${subdomains[@]}"; do
-    recordtype="A"
+    recordtype="A" 
     destination="$(get_ip "$sub"."$domain")"
     echo "The subdomain $sub is a $recordtype record and points to $destination"
 done
