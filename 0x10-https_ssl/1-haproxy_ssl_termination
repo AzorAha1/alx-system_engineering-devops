@@ -40,7 +40,6 @@ frontend serverfront
     default_backend serverback
 
 backend serverback
-    mode http
     balance roundrobin
-    server 415758-web-01 54.197.131.36 check
-    server 415758-web-02 100.26.226.35 check
+    server web1 54.197.131.36 check
+    server web2 100.26.226.35 check
