@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 #configure domain zone to have different sub domains
-domain="$1"
-subdomain="$2"
-echo The subdomain "$subdomain" is an A record and points to "$domain"
+get_ip(){
+    dig +short "$1"
+}
+domain=$1
+subdomain=$2
+if [ -z "$subdomain" ]; then
+    subdomains=("www" "lb-01" "web-01" "web-02")
+else
+    subdomains=("$subdomain")
+fi
+
+for sub in "${subdomains[@]}"; do
+    recordtype="A"
+    destination="$(get_ip "$sub"."$domain")"
+    echo "The subdomain $sub is a $recordtype record and points to $destination"
+done
