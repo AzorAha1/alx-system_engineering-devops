@@ -1,12 +1,15 @@
-global
-    ssl-dh-param-file /etc/haproxy/dhparams.pem
-
-
+        errorfile 403 /etc/haproxy/errors/403.http
+        errorfile 408 /etc/haproxy/errors/408.http
+        errorfile 500 /etc/haproxy/errors/500.http
+        errorfile 502 /etc/haproxy/errors/502.http
+        errorfile 504 /etc/haproxy/errors/503.http
+        errorfile 504 /etc/haproxy/errors/504.http
 frontend serverfront
-    mode http
-    bind *:443 ssl crt /etc/haproxy/certs/www.Techwithfaiz.tech.pem
+    bind *:80
+    bind *:443 ssl crt /etc/haproxy/certs/www.techwithfaiz.tech.pem
     redirect scheme https if !{ ssl_fc }
     default_backend serverback
+
 backend serverback
     mode http
     balance roundrobin
