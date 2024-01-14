@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#listening on port 80 of all server's active ipv4 ips
+sudo sed -i '/http { /a\
+    server {\
+        listen 80 default_server;\
+        server_name _;\
+    }' /etc/nginx/nginx.conf
+
