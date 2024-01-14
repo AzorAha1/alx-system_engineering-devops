@@ -5,4 +5,3 @@ sudo sed -i '/http { /a\
         listen 80 default_server;\
         server_name _;\
     }' /etc/nginx/nginx.conf
-
