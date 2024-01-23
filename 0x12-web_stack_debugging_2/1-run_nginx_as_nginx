@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #get nginx to run as the user nginx
-sudo -u nginx systemctl start nginx
+echo "user nginx;" | sudo tee /etc/nginx/nginx.conf
 
