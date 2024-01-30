@@ -3,7 +3,7 @@
 import requests
 import sys
 
-if __name__ == "__main":
+if __name__ == "__main__":
     employee_id = int(sys.argv[1])
     name_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
     todos_url = f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
