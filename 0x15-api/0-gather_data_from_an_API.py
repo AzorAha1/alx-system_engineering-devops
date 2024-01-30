@@ -18,7 +18,7 @@ if __name__ == "__main__":
         if data['completed'] is True:
             comptasksum += 1
         all_task_sum += 1
-    print(f'Employee {empy_name} is done tasks({comptasksum}/{all_task_sum}):')
+    print(f'Employee {empy_name} is done with tasks({comptasksum}/{all_task_sum}):')
     for data in data_todo:
         if data['completed'] is True:
             print(f'\t {data["title"]}')
