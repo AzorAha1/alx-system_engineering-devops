@@ -13,6 +13,7 @@ if __name__ == "__main__":
     data_name = response_name.json()
     data_todo = response_todo.json()
     empy_name = data_name['name']
+    username = data_name['username']
     comptasksum = 0
     tasksum = 0
     for data in data_todo:
@@ -30,7 +31,7 @@ if __name__ == "__main__":
             writer.writerow(
                 [
                     f"{employee_id}",
-                    f"{empy_name}",
+                    f"{username}",
                     f"{data['completed']}",
                     f"{data['title']}"
                 ])
