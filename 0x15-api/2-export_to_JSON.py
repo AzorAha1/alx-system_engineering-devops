@@ -32,5 +32,5 @@ if __name__ == "__main__":
             "username": empy_name
             }
         formatted_data[f'{employee_id}'].append(task_data)
-        with open(file=f'{employee_id}.json', mode='w') as jsonfile:
-            json.dump(obj=formatted_data, fp=jsonfile)
+    with open(file=f'{employee_id}.json', mode='w') as jsonfile:
+        json.dump(obj=formatted_data, fp=jsonfile)
