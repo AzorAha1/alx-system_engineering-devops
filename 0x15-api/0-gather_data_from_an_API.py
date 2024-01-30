@@ -13,12 +13,12 @@ if __name__ == "__main__":
     data_todo = response_todo.json()
     empy_name = data_name['name']
     comptasksum = 0
-    all_task_sum = 0
+    tasksum = 0
     for data in data_todo:
         if data['completed'] is True:
             comptasksum += 1
-        all_task_sum += 1
-    print(f'Employee {empy_name} is done with tasks({comptasksum}/{all_task_sum}):')
+        tasksum += 1
+    print(f'Employee {empy_name} is done with tasks({comptasksum}/{tasksum}):')
     for data in data_todo:
         if data['completed'] is True:
             print(f'\t {data["title"]}')
