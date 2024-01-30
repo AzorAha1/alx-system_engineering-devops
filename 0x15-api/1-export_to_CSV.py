@@ -25,7 +25,7 @@ if __name__ == "__main__":
             print(f'\t {data["title"]}')
 
     with open(file=f'{employee_id}.csv', mode='w') as csvfile:
-        writer = csv.writer(csvfile)
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for data in data_todo:
             writer.writerow(
                 [
