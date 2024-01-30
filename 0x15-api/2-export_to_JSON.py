@@ -14,6 +14,7 @@ if __name__ == "__main__":
     data_todo = response_todo.json()
     empy_name = data_name['name']
     username = data_name['username']
+    id = data_name['id']
     comptasksum = 0
     tasksum = 0
     for data in data_todo:
@@ -31,6 +32,6 @@ if __name__ == "__main__":
             "completed": task['completed'],
             "username": username
             }
-        formatted_data[f'{employee_id}'].append(task_data)
+        formatted_data[f'{id}'].append(task_data)
     with open(file=f'{employee_id}.json', mode='w') as jsonfile:
         json.dump(obj=formatted_data, fp=jsonfile)
