@@ -1,15 +1,23 @@
 #!/usr/bin/python3
 """gather data from an api"""
-import requests, urllib.request
-import json, sys
+import requests
+import sys
 
 employee_id = int(sys.argv[1])
-url=f'https://jsonplaceholder.typicode.com/todos/{employee_id}'
-with urllib.request.urlopen(url=url) as request:
-    data = json.load(request)
-    employee_name = data['EMPLOYEE_NAME']
-    number_of_done_tasks = data['NUMBER_OF_DONE_TASKS']
-    total_number_of_tasks = data['TOTAL_NUMBER_OF_TASKS']
-    task_title = data['title']
-    output = f'employee {task_title}'
-    print(output)
+name_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
+todos_url = f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
+response_name = requests.get(url=name_url)
+response_todo = requests.get(url=todos_url)
+data_name = response_name.json()
+data_todo = response_todo.json()
+employee_name = data_name['name']
+completed_task_sum = 0
+all_task_sum = 0
+for data in data_todo:
+    if data['completed'] is True:
+        completed_task_sum += 1
+    all_task_sum += 1
+print(f'Employee {employee_name}\
+        is done tasks({completed_task_sum}/{all_task_sum}):')
+for data in data_todo:
+    print(f'\t {data["title"]}')
