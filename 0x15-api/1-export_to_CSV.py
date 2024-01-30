@@ -24,7 +24,13 @@ if __name__ == "__main__":
         if data['completed'] is True:
             print(f'\t {data["title"]}')
 
-    with open(file=f'{employee_id}.csv', mode='w') as  csvfile:
+    with open(file=f'{employee_id}.csv', mode='w') as csvfile:
         writer = csv.writer(csvfile)
         for data in data_todo:
-            writer.writerow([f"{employee_id}", f"{empy_name}", f"{data['completed']}", f"{data['title']}"])
+            writer.writerow(
+                [
+                    f"{employee_id}",
+                    f"{empy_name}",
+                    f"{data['completed']}",
+                    f"{data['title']}"
+                ])
