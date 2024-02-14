@@ -12,9 +12,10 @@ def number_of_subscribers(subreddit):
     auth = requests.auth.HTTPBasicAuth(client_id, secret_key)
     headers = {'User-Agent': 'faisalapi/0.0.1'}
     url = f'https://oauth.reddit.com/r/{subreddit}/about.json'
-    resget = requests.get(url=url, auth=auth, headers=headers, allow_redirects=False)
+    resget = requests.get(url=url, auth=auth, headers=headers,
+                          allow_redirects=False)
     sub = resget.json().get('data', {}).get('subscribers')
-    if resget.status_code == 404:
-        return (0)
-    else:
+    if resget.status_code == 200:
         return (sub)
+    else:
+        return (0)
