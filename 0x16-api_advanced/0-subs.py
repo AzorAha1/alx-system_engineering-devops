@@ -17,5 +17,5 @@ def number_of_subscribers(subreddit):
     sub = resget.json().get('data', {}).get('subscribers', 0)
     if resget.status_code == 200:
         return (sub)
-    else:
+    elif resget.status_code == 404:
         return (0)
