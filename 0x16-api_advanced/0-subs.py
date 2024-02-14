@@ -14,8 +14,7 @@ def number_of_subscribers(subreddit):
     url = f'https://oauth.reddit.com/r/{subreddit}/about.json'
     resget = requests.get(url=url, auth=auth, headers=headers, allow_redirects=False)
     sub = resget.json().get('data', {}).get('subscribers')
-    if resget.status_code == 200 and\
-            'data' in resget.json() and 'subscribers' in resget.json()['data']:
-        return (sub)
-    else:
+    if resget.status_code == 404:
         return (0)
+    else:
+        return (sub)
