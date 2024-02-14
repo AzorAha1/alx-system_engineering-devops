@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""function using reddit api"""
+
+
 import requests
 
 
