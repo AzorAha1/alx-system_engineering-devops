@@ -11,8 +11,12 @@ def top_ten(subreddit):
     secret_key = '1LOwBUH-z-_f8LcDIJPenc3GBdPGrQ'
     auth = requests.auth.HTTPBasicAuth(client_id, secret_key)
     headers = {'User-Agent': 'faisalapi/0.0.1'}
-    url = f'https://oauth.reddit.com/r/{subreddit}/top.json?t=day&limit=10'
-    resget = requests.get(url=url, auth=auth, headers=headers)
+    params = {
+        't': 'day',
+        'limit': 10
+    }
+    url = f'https://oauth.reddit.com/r/{subreddit}/top.json'
+    resget = requests.get(url=url, auth=auth, headers=headers, params=params)
     if resget.status_code == 200:
         subs = resget.json().get('data', {}).get('children')
         for sub in subs:
