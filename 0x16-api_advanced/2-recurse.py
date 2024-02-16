@@ -19,6 +19,8 @@ def recurse(subreddit, hot_list=[], after=None):
     resget = requests.get(auth=auth, headers=headers, url=url, params=params)
     if resget.status_code == 200:
         listofitems = resget.json()['data']['children']
+        if not listofitems:
+            return None
         for item in listofitems:
             hot_list.append(item['data']['title'])
         previous = resget.json()['data']['after']
