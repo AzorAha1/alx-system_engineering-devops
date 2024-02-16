@@ -27,7 +27,5 @@ def recurse(subreddit, hot_list=[], after=None):
         if previous is not None:
             recurse(subreddit, hot_list, previous)
         return hot_list
-    elif resget.status_code == 404:
-        return None
     else:
         return None
