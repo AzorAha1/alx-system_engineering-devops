@@ -3,12 +3,14 @@
 
 
 import requests
+after = None
 
 
-def recurse(subreddit, hot_list=[], after=None):
+def recurse(subreddit, hot_list=[]):
     """recursive function returns list containing title of all hot articles"""
     client_id = 'fsyHwM_7gSQI9-Jn3lpwOQ'
     secret_key = '1LOwBUH-z-_f8LcDIJPenc3GBdPGrQ'
+    global after
     params = {
         'after': after
     }
@@ -18,13 +20,13 @@ def recurse(subreddit, hot_list=[], after=None):
     resget = requests.get(auth=auth, headers=headers, url=url, params=params)
     if resget.status_code == 200:
         data = resget.json()['data']
-        after = data['after']
         listofitems = data['children']
         if after is not None:
-            hot_list = recurse(subreddit, hot_list, after)
+            after = data['after']
+            recurse(subreddit, hot_list)
         for item in listofitems:
             hot_list.append(item['data']['title'])
         return (hot_list)
     else:
-        return (hot_list)
+        return (None)
 
