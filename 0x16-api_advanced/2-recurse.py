@@ -21,6 +21,7 @@ def recurse(subreddit, hot_list=[]):
     if resget.status_code == 200:
         data = resget.json()['data']
         listofitems = data['children']
+        after = data['after']
         if after is not None:
             after = data['after']
             recurse(subreddit, hot_list)
