@@ -18,13 +18,13 @@ def recurse(subreddit, hot_list=[], after=None):
     resget = requests.get(auth=auth, headers=headers, url=url, params=params)
     if resget.status_code == 200:
         data = resget.json()['data']
+        after = data['after']
         listofitems = data['children']
+        if after is not None:
+            hot_list = recurse(subreddit, hot_list, after)
         for item in listofitems:
             hot_list.append(item['data']['title'])
-        after = data['after']
-        if after is not None:
-            recurse(subreddit, hot_list, after)
         return (hot_list)
     else:
-        return (None)
+        return (hot_list)
 
