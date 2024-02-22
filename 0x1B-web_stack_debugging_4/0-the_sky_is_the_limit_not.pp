@@ -7,9 +7,8 @@ file { '/etc/default/nginx'
   notify  => Exec['nginx restart']
 }
 
-#restart nginx
-exec { 'nginx restart':
-  command => 'service nginx restart',
-  require => File['/etc/default/nginx'],
-  path    => ['/usr/bin', '/bin', '/usr/sbin', '/sbin']
+# restart nginx
+-> exec { 'nginx-restart':
+command => 'nginx restart',
+path    => '/etc/init.d/',
 }
