@@ -5,6 +5,7 @@ file { '/etc/default/nginx'
   notify  => Exec['nginx restart']
 }
 
+#restart nginx
 exec { 'nginx restart':
   command => 'systemctl restart nginx',
   require => File['/etc/default/nginx'],
