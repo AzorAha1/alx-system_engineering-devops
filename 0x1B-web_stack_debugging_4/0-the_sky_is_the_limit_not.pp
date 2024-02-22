@@ -8,7 +8,6 @@ file { 'fix nginx'
   notify  => Exec['nginx restart']
 }
 
-# restart nginx
 -> exec { 'nginx-restart':
 command => 'nginx restart',
 path    => '/etc/init.d/',
