@@ -3,9 +3,9 @@
 user { 'holberton':
   ensure   => present,
   password => 'changeme',
-  shell    => '/bin/bash',
-  uid      => '501',
-  gid      => '20',
+  # shell    => '/bin/bash',
+  # uid      => '501',
+  # gid      => '20',
 }
 
 exec { 'permission':
