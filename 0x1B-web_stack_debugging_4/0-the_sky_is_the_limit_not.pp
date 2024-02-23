@@ -1,7 +1,7 @@
 #web stack debugging 4
 
 #increase ulimit
-file { 'fix nginx'
+file { 'fix nginx':
   ensure  => file,
   path    => '/etc/default/nginx'
   content => template('nginx/nginx_ulimit.erb'),
