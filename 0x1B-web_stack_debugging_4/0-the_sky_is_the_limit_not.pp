@@ -4,12 +4,11 @@
 file { 'fix nginx':
   ensure  => file,
   path    => '/etc/default/nginx',
-  content => template('nginx/nginx_ulimit.erb'),
-  notify  => Exec['nginx restart'],
+  content => inline_template('<%= File.read("/etc/default/nginx").gsub(/15/, "4096") %>'),
 }
 
 # Restart ngnx
 exec { 'nginx-restart':
-command => 'systemctl restart nginx',
-path    => ['/usr/bin', '/bin', '/usr/sbin', '/sbin'],
+command => 'nginx restart',
+path    => '/etc/init.d',
 }
