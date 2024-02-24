@@ -9,6 +9,6 @@ file { 'fix nginx':
 
 # Restart ngnx
 exec { 'nginx-restart':
-command => 'restart nginx',
+command => '/bin/systemctl restart nginx',
 path    => ['/usr/bin', '/bin', '/usr/sbin', '/sbin'],
 }
