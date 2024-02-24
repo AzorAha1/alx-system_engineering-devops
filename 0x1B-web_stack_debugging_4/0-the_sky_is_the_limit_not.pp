@@ -8,7 +8,8 @@ file { 'fix nginx':
   notify  => Exec['nginx restart']
 }
 
--> exec { 'nginx-restart':
-command => 'nginx restart',
-path    => '/etc/init.d/',
+# Restart ngnx
+exec { 'nginx-restart':
+command => '/usr/sbin/default/nginx restart',
+path    => ['/usr/bin', '/bin', '/usr/sbin', '/sbin'],
 }
