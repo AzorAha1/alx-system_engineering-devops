@@ -8,8 +8,8 @@ user { 'holberton':
 
 #ulimit increase
 exec { 'name':
-  command => '/bin/echo "holberton soft nofile  1048576" >> /etc/security/limits.conf && ' +
-            '/bin/echo "holberton hard nofile  1048578" >> /etc/security/limits.conf',
+  command => '/bin/echo "holberton soft nofile   1048576" >> /etc/security/limits.conf && \
+             /bin/echo "holberton hard nofile   1048578" >> /etc/security/limits.conf',
 }
 
 
